@@ -8,19 +8,23 @@ public class Celda {
     private boolean esColor;
     private Ficha ficha; 
 
-    private char celda = '░';
-    private char celdaColor = '█';
+    //private char celda = '░';
+    private char celdaColor = 'W';
     //█▓
 
 
     public static final String ANSI_WHITE = "\u001B[37m";
-    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+    //public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
     public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
-    public static final String ANSI_RESET = "\u001B[0m";
+    //public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
+    //public static final String ANSI_RESET = "\u001B[0m";
 
-    public void setFicha(Ficha f){
+    public void setFicha(Ficha f, int x, int y){
         this.ficha = f;
+        this.ficha.setCoordenada(x, y);
+    }
+    public void setFicha(){
+        this.ficha = null;
     }
 
     public boolean getEsColor(){
@@ -29,7 +33,6 @@ public class Celda {
 
     public Ficha getFicha(){
         Ficha tmp = this.ficha;
-        this.ficha = null;
         return tmp;
     }
 
