@@ -22,7 +22,7 @@ public class Damas {
                 lecturaCorrecta = true;
             }
             else{
-                System.out.println("Debe ingresar al menos un caracter para continuar.");
+                System.out.println("Ingrese un caracter correcto");
             }
 
         }
@@ -43,7 +43,7 @@ public class Damas {
                 lecturaCorrecta = true;
                 if (soloPositivo && res<0){
                     lecturaCorrecta = false;
-                    System.out.println("Debe ingresar un número positivo. ");
+                    System.out.println("Solo numeros positivos");
                 }
             } catch (Exception e) {
                 lecturaCorrecta = false;
@@ -100,8 +100,8 @@ public class Damas {
             tablero.pintarTablero();
             System.out.println(advertencia);
             advertencia = "";
-            System.out.println("TURNO DE LAS "+((esBlanca)?"BLANCAS":"NEGRAS"));
-            fichaAMover = tablero.getFicha(Damas.readString("Seleccione la ficha que desea mover "), esBlanca);
+            System.out.println("TURNO DE LAS "+((esBlanca)?"CELESTES":"ROSADAS"));
+            fichaAMover = tablero.getFicha(Damas.readString("Que ficha desea mover? "), esBlanca);
             if (fichaAMover == null){
                 advertencia +="Debe seleccionar una ficha valida";
             }
@@ -109,7 +109,7 @@ public class Damas {
                 coordenadasPosibles = fichaAMover.getMovimientosPosibles();
 
                 if (coordenadasPosibles!=null){
-                    String mensaje = "\nCoordenadas posibles para la ficha seleccionada: \n";
+                    String mensaje = "\nLa coordenada a la que puede moverse es: \n";
                     int cantidadPosibilidades = 0;
                     int i = 0;
                     while (coordenadasPosibles[i]!=null) {
@@ -119,7 +119,7 @@ public class Damas {
                         }
                         i++;
                     }
-                    mensaje += "\nSeleccione la coordenada a la que desea moverse: ";
+                    mensaje += "\nLa coordenada a la que puede moverse es: ";
                     int seleccion = -1;
                     while ((seleccion < 0)||(seleccion >= cantidadPosibilidades)){
                         seleccion = Damas.readInt(mensaje, true);

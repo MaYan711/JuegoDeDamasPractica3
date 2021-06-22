@@ -14,8 +14,8 @@ public class Ficha {
 
     //private char celdaColor = '█';
     // █▓
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
 
     private String id;
 
@@ -28,7 +28,7 @@ public class Ficha {
     }
 
     public String getCaracter() {
-        String res = (esNegra) ? "" + ANSI_RED + celda : "" + ANSI_YELLOW + celda;
+        String res = (esNegra) ? "" + ANSI_PURPLE + celda : "" + ANSI_CYAN + celda;
         return res;
     }
 

@@ -9,7 +9,7 @@ public class Celda {
     private Ficha ficha; 
 
     //private char celda = '░';
-    private char celdaColor = 'W';
+    private char celdaColor = 'X';
     //█▓
 
 
